@@ -231,7 +231,7 @@ class Model(nn.Module):
         "female_2": 3,
         "female_3": 7,
     }
-    DEFAULT_VOICE: Optional[str] = "female_2"
+    DEFAULT_VOICE: Optional[str] = "female_3"
 
     def generate(
         self,
