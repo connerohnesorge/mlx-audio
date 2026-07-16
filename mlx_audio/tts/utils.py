@@ -17,6 +17,7 @@ from mlx_audio.utils import (
 )
 
 MODEL_REMAPPING = {
+    "audex_tts": "audex_tts",
     "qwen3_tts": "qwen3_tts",
     "outetts": "outetts",
     "spark": "spark",

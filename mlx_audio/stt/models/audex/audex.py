@@ -298,12 +298,14 @@ class Model(nn.Module):
 
         detected_lang = None
         m = re.match(
-            r"^Language:\s*([A-Za-z ]+?)\.\s*The spoken content of the audio is\s*'(.*)'\.?\s*$",
+            r"^(?:Language:\s*([A-Za-z ]+?)\.\s*)?"
+            r"The (?:spoken )?content of the (?:input )?audio is\s*'(.*)'\.?\s*$",
             text,
             re.DOTALL,
         )
         if m:
-            detected_lang = m.group(1).strip().lower()
+            if m.group(1):
+                detected_lang = m.group(1).strip().lower()
             text = m.group(2).strip()
 
         elapsed = time.time() - start
